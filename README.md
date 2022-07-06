@@ -3,6 +3,8 @@
 Simple arduino antenna rotator with two axis (AZ and EL). For AZ is used step motor and for EL is used linear motor. 
 For controll is created PCB with Arduino nano, step motor driver and four relays. Controller uses easycomm and rotator can work with HAM Lib, Gpredict, SatNOGS, ...
 
+![Whole](https://raw.githubusercontent.com/Lukas0025/SatteliteRotator/master/IMGs/whole.png?sanitize=true)
+
 ## Rotator setup
 
 ### Azimuth
@@ -11,7 +13,11 @@ For azimuth rotator can by used simply one gear on rope and step motor like here
 
 * Step motor and rope
 
+![StepMotor](https://raw.githubusercontent.com/Lukas0025/SatteliteRotator/master/IMGs/stepmotoraz.jpg?sanitize=true)
+
 * Step motor and old rotator
+
+![OldRotator](https://raw.githubusercontent.com/Lukas0025/SatteliteRotator/master/IMGs/rotatoraz.jpg?sanitize=true)
 
 
 ### Elevation
