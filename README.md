@@ -25,7 +25,7 @@ For elevation is used linear motor more info is here https://www.qsl.net/sv1bsx/
 
 Board using Arduino Nano as microcontoler, A4988 for drive stepmotor, external 4 relay board for drive linear motor and same extesion ports.
 
-![Board](https://raw.githubusercontent.com/Lukas0025/SatteliteRotator/master/IMGs/dps_design.png?sanitize=true)
+![Board](https://raw.githubusercontent.com/Lukas0025/SatteliteRotator/master/IMGs/dps_design.png?sanitize=true | width=500)
 
 ### Parts:
 
@@ -56,4 +56,4 @@ Connect to Gpredict using add rotator to Gpredict in Edit > Settings > Interface
 
 then you can use rotator in Antenna controller
 
-![Gpredict](https://raw.githubusercontent.com/Lukas0025/SatteliteRotator/master/IMGs/gpredict.png?sanitize=true)
+![Gpredict](https://raw.githubusercontent.com/Lukas0025/SatteliteRotator/master/IMGs/gpredict.png?sanitize=true | width=500)
