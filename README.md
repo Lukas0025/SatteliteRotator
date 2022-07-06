@@ -43,6 +43,27 @@ Board using Arduino Nano as microcontoler, A4988 for drive stepmotor, external 4
 * power port - 5V, 3V3 and GND
 * 2 relays
 
+### Ports mapping
+
+|  Boards          | Arduino Nano |
+|------------------|--------------|
+| Relay 1          |      D2      |
+| Relay 2          |      D4      |
+| Relay 3          |      D3      |
+| Relay 4          |      D5      |
+| Step Motor Step  |      D6      |
+| Step Motor Dir   |      D7      |
+| Generic 1        |      D8      |
+| Generic 2        |      D9      |
+| Generic 3        |      D10     |
+| A0               |      A0      |
+| A1               |      A1      |
+| MI               |    MISO      |
+| MO               |    MOSI      |
+| SCK              |     SCK      |
+| SDA (I2C)        |     SDA      |
+| SCL (I2C)        |     SCL      |
+
 ## Connect with PC (HamLib, Gpredict, ...)
 
 After code uploaded to arduino you need run rotctld for parse easycomm comunication.
