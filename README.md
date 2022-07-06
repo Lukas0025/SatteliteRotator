@@ -61,8 +61,8 @@ Board using Arduino Nano as microcontoler, A4988 for drive stepmotor, external 4
 | MI               |    MISO      |
 | MO               |    MOSI      |
 | SCK              |     SCK      |
-| SDA (I2C)        |     SDA      |
-| SCL (I2C)        |     SCL      |
+| SDA (I2C)        |     SDA/A4   |
+| SCL (I2C)        |     SCL/A5   |
 
 ## Connect with PC (HamLib, Gpredict, ...)
 
