@@ -19,7 +19,7 @@ For azimuth rotator can by used simply one gear on rope and step motor like here
 For elevation is used linear motor more info is here https://www.qsl.net/sv1bsx/actuator/actuator.html
 
 ![Elevation](https://www.qsl.net/sv1bsx/actuator/30_an.gif)
-
+![Elevation_open](https://www.qsl.net/sv1bsx/actuator/70_an-1a.gif)
 
 ## Controller board
 
@@ -52,7 +52,7 @@ sudo rotctld -m 202 -r /dev/ttyACM0 -s 9600 -T 127.0.0.1 -t 4533 -C timeout=5000
 
 Connect to Gpredict using add rotator to Gpredict in Edit > Settings > Interface > Rotators > add new
 
-![Add New](https://raw.githubusercontent.com/Lukas0025/SatteliteRotator/master/IMGs/gpredictnew.png?sanitize=true)
+![Add New](https://raw.githubusercontent.com/Lukas0025/SatteliteRotator/master/IMGs/gpredictadd.png?sanitize=true)
 
 then you can use rotator in Antenna controller
 
