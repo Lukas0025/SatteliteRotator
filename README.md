@@ -11,7 +11,7 @@ For azimuth rotator can by used simply one gear on rope and step motor like here
 
 * Step motor and rope
 
-* STep motor and old rotator
+* Step motor and old rotator
 
 
 ### Elevation
@@ -23,7 +23,7 @@ For elevation is used linear motor more info is here https://www.qsl.net/sv1bsx/
 
 ## Controller board
 
-Board using Arduino Nano as microcontoler, A4988 for drive stepmotor, external 4 relay board for drive linear motor and same extesion ports.
+Board using Arduino Nano as microcontoler, A4988 for drive stepmotor, external 4 relay board for drive linear motor and same extesion ports. Board is designed in Kicad.
 
 ![Board](https://raw.githubusercontent.com/Lukas0025/SatteliteRotator/master/IMGs/dps_design.png?sanitize=true)
 
@@ -41,6 +41,7 @@ Board using Arduino Nano as microcontoler, A4988 for drive stepmotor, external 4
 * SPI port
 * I2C port
 * power port - 5V, 3V3 and GND
+* 2 relays
 
 ## Connect with PC (HamLib, Gpredict, ...)
 
