@@ -1,4 +1,4 @@
-# Sattelite (antenna) Rotator (OpenSource and Open-source hardware) (HamLIB, Gpredict, satNOGS)
+# Sattelite (antenna) Rotator (OpenSource and Open-source hardware) (HamLIB, Gpredict, satNOGS) (Linear motor EL)
 
 Simple arduino antenna rotator with two axis (AZ and EL). For AZ is used step motor and for EL is used linear motor. 
 For controll is created PCB with Arduino nano, step motor driver and four relays. Controller uses easycomm and rotator can work with HAM Lib, Gpredict, SatNOGS, ...
