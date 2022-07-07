@@ -35,10 +35,14 @@ Board using Arduino Nano as microcontoler, A4988 for drive stepmotor, external 4
 
 ### Parts:
 
-* Arduino Nano (https://www.ebay.com/itm/384943705316?hash=item59a06ecce4:g:9NgAAOSwJPJipEhS)
-* A4988 Driver (https://www.ebay.com/itm/221921771119?hash=item33ab917e6f:g:BpsAAOSwl9BWKyv1)
-* 4 relay borad (4 channels) (https://www.ebay.com/itm/295078400027?hash=item44b40b101b:g:wqoAAOSwqW9ZXzWt)
+* Arduino Nano (https://www.ebay.com/itm/384943705316)
+* A4988 Driver (https://www.ebay.com/itm/221921771119)
+* 4 relay borad (4 channels) (https://www.ebay.com/itm/295078400027)
 * 2x 100uF capacitator
+* 2x 2-pin pitch screw terminal (https://www.ebay.com/itm/353418500437)
+* 2x 15pin 2.54mm Long Pin Female Header (https://www.ebay.com/itm/223478558792)
+* 2x 8pin 2.54mm Long Pin Female Header (https://www.ebay.com/itm/223478558792)
+* 1x 4pin 2.54mm Long Pin Male Header
 * prited PCB 
 
 ### Extension ports
