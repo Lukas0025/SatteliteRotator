@@ -1,22 +1,23 @@
 #include "linear_motor.h"
 #include "step_motor.h"
 #include "easycomm.h"
+#include "librespace_rotator_pins.h"
 
 #define USE_AZ_NOTIFY_RELAY
 #define RELAY_ON         LOW
 #define RELAY_OFF        HIGH
-#define NOTIF_RELAY      4
+#define NOTIF_RELAY      RELAY_3
 
-#define AZ_DIR_PIN        12  
-#define AZ_STEP_PIN       13
+#define AZ_DIR_PIN        MOTOR_DIR 
+#define AZ_STEP_PIN       MOTOR_STEP
 #define AZ_STEP_SPEED     40
 #define AZ_STEPS_PER_DEG  137
 #define AZ_MAX_DEG        360
 
 #define AZ_OFFSET 180
 
-#define EL_POS_PIN            15
-#define EL_NEG_PIN            2
+#define EL_POS_PIN            RELAY_1
+#define EL_NEG_PIN            RELAY_2
 #define EL_STEP_COUNT_MAX     29000
 #define EL_MAX_DEG            81
 #define EL_TIME_PER_DEG_COUNT 1074
@@ -31,8 +32,10 @@ easycomm*     easycom;
 bool last_az_step = false;
 
 void setup() {
+  #ifdef USE_AZ_NOTIFY_RELAY
   pinMode(NOTIF_RELAY, OUTPUT);
-   digitalWrite(NOTIF_RELAY, RELAY_OFF);
+  digitalWrite(NOTIF_RELAY, RELAY_OFF);
+  #endif
   
   el = new linear_motor(EL_POS_PIN, EL_NEG_PIN, EL_STEP_COUNT_MAX, EL_MAX_DEG);
   el->set_step(EL_DEG_COUNT_PER_TIME, EL_TIME_PER_DEG_COUNT);
@@ -46,12 +49,12 @@ void setup() {
 }
 
 void loop() {
-  easycom->parse((az->get_deg() + AZ_OFFSET) % 360, el->get_deg() - EL_OFFSET);
+  easycom->parse((az->get_deg() + AZ_OFFSET) % AZ_MAX_DEG, el->get_deg() - EL_OFFSET);
   
   el->set_target(easycom->ComElev + EL_OFFSET);
   el->step();
 
-  az->set_target((easycom->ComAzim + AZ_OFFSET) % 360);
+  az->set_target((easycom->ComAzim + AZ_OFFSET) % AZ_MAX_DEG);
   bool az_step = az->step();
   
   #ifdef USE_AZ_NOTIFY_RELAY
@@ -61,7 +64,7 @@ void loop() {
     delay(200);
     digitalWrite(NOTIF_RELAY, RELAY_OFF);
   }
-  #endif
 
   last_az_step = az_step;
+  #endif
 }
