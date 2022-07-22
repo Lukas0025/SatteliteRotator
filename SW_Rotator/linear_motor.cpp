@@ -29,23 +29,28 @@ void linear_motor::step() {
 }
   
 void linear_motor::motor_down(int times) {
-  digitalWrite(this->ports.p, MOT_ON);
   digitalWrite(this->ports.n, MOT_OFF);
+  digitalWrite(this->ports.p, MOT_ON);
   delay(times);
   digitalWrite(this->ports.p, MOT_OFF);
   digitalWrite(this->ports.n, MOT_OFF);
+  delay(times);
 }
   
 void linear_motor::motor_up(int times) {
   digitalWrite(this->ports.p, MOT_OFF);
   digitalWrite(this->ports.n, MOT_ON);
   delay(times);
-  digitalWrite(this->ports.p, MOT_OFF);
   digitalWrite(this->ports.n, MOT_OFF);
+  digitalWrite(this->ports.p, MOT_OFF);
+  delay(times);
 }
   
 void linear_motor::home() {
-  this->motor_down(full_milis * 2);
+  for (int i = 0; i < full_milis; i += 1000) {
+    this->motor_down(1000);
+  }
+  
   this->current = 0;
   this->target = 0;
 }

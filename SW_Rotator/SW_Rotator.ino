@@ -32,10 +32,15 @@ easycomm*     easycom;
 bool last_az_step = false;
 
 void setup() {
-  #ifdef USE_AZ_NOTIFY_RELAY
-  pinMode(NOTIF_RELAY, OUTPUT);
-  digitalWrite(NOTIF_RELAY, RELAY_OFF);
-  #endif
+  pinMode(RELAY_1, OUTPUT);
+  pinMode(RELAY_2, OUTPUT);
+  pinMode(RELAY_3, OUTPUT);
+  pinMode(RELAY_4, OUTPUT);
+
+  digitalWrite(RELAY_1, RELAY_OFF);
+  digitalWrite(RELAY_2, RELAY_OFF);
+  digitalWrite(RELAY_3, RELAY_OFF);
+  digitalWrite(RELAY_4, RELAY_OFF);
   
   el = new linear_motor(EL_POS_PIN, EL_NEG_PIN, EL_STEP_COUNT_MAX, EL_MAX_DEG);
   el->set_step(EL_DEG_COUNT_PER_TIME, EL_TIME_PER_DEG_COUNT);
