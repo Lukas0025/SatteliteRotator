@@ -8,8 +8,8 @@ class easycomm {
     Stream *serial_port;
 
   public:
-    int ComAzim;
-    int ComElev;
+    int ComAzim = 0;
+    int ComElev = 0;
     
     easycomm (Stream *serial_port) {
       this->serial_port = serial_port;
