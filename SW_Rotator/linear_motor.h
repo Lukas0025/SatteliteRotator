@@ -18,12 +18,14 @@ class linear_motor {
     int                       max_deg;
     int                       target;
     int                       current;
+    float                     restart_deg_count;
+    float                     trevled_deg;
 
     int                       step_deg;
     int                       step_time;
 
   public:
-    linear_motor(int port_positive, int port_negative, int full_milis, int max_deg) {
+    linear_motor(int port_positive, int port_negative, int full_milis, int max_deg, float restart_deg_count) {
       this->ports.p = port_positive;
       this->ports.n = port_negative;
 
@@ -34,6 +36,8 @@ class linear_motor {
       
       this->full_milis = full_milis;
       this->max_deg    = max_deg;
+
+      this->restart_deg_count = restart_deg_count;
   
       this->home();
     }

@@ -19,6 +19,8 @@ class step_motor {
     float                       target;
     float                       current;
     float                       step2deg;
+    float                       restart_deg_count;
+    float                       trevled_deg;
 
     int                         step_speed;
     int                         step_count;
@@ -28,7 +30,7 @@ class step_motor {
     AccelStepper                stepper;
 
   public:
-    step_motor(int port_step, int port_dir, int step_speed, int step_count, int max_deg) {
+    step_motor(int port_step, int port_dir, int step_speed, int step_count, int max_deg, float restart_deg_count) {
       this->ports.dir  = port_dir;
       this->ports.step = port_step;
 
@@ -40,6 +42,8 @@ class step_motor {
       this->step2deg      = (float) max_deg / step_count;
       this->max_deg       = max_deg;
       this->offset        = 0;
+
+      this->restart_deg_count = restart_deg_count;
       
       this->home();
     }

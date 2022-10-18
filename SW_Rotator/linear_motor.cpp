@@ -15,6 +15,8 @@ void linear_motor::set_target(int deg) {
 
 void linear_motor::step() {
   if (abs(this->current - this->target) > DEG_TOLERANCE) {
+    if (this->trevled_deg + abs(this->current - this->target) > this->restart_deg_count) this->home();
+
      if (this->current < this->target) {
         if (this->current >= this->max_deg) return; 
         this->motor_up(this->step_time);
@@ -25,6 +27,8 @@ void linear_motor::step() {
         this->motor_down(this->step_time);
         this->current -= this->step_deg;
       }
+
+      this->trevled_deg += this->step_deg;
    }
 }
   
@@ -51,6 +55,7 @@ void linear_motor::home() {
     this->motor_down(1000);
   }
   
+  this->trevled_deg = 0;
   this->current = 0;
   this->target = 0;
 }

@@ -11,6 +11,9 @@ void step_motor::set_target(int deg) {
 bool step_motor::step() {
   if (abs(this->current - this->target) > DEG_TOLERANCE) {
 
+     this->trevled_deg += abs(this->current - this->target);
+     if (this->trevled_deg > this->restart_deg_count) this->home();
+
      float steps = abs(this->current - this->target) / this->step2deg;
     
      if (this->current < this->target) {
@@ -49,6 +52,7 @@ void step_motor::motor_up(float steps) {
   
 void step_motor::home() {
   this->motor_up(this->step_count);
+  this->trevled_deg = 0;
   this->current = 0;
   this->target = 0;
 }
