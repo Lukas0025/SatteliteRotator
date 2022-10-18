@@ -1,7 +1,7 @@
 #pragma ones
 
-#include <Arduino.h>
 #include <AccelStepper.h>
+#include <Arduino.h>
 
 #define DEG_TOLERANCE 5
 #define MOTORINTERFACETYPE 1
@@ -14,47 +14,47 @@ struct step_motor_ports {
 };
 
 class step_motor {
-  private:
-    struct step_motor_ports     ports;
-    float                       target;
-    float                       current;
-    float                       step2deg;
-    float                       restart_deg_count;
-    float                       trevled_deg;
+private:
+  struct step_motor_ports ports;
+  float target;
+  float current;
+  float step2deg;
+  float restart_deg_count;
+  float trevled_deg;
 
-    int                         step_speed;
-    int                         step_count;
-    int                         offset;
-    int                         max_deg;
+  int step_speed;
+  int step_count;
+  int offset;
+  int max_deg;
 
-    AccelStepper                stepper;
+  AccelStepper stepper;
 
-  public:
-    step_motor(int port_step, int port_dir, int step_speed, int step_count, int max_deg, float restart_deg_count) {
-      this->ports.dir  = port_dir;
-      this->ports.step = port_step;
+public:
+  step_motor(int port_step, int port_dir, int step_speed, int step_count,
+             int max_deg, float restart_deg_count) {
+    this->ports.dir = port_dir;
+    this->ports.step = port_step;
 
-      this->stepper = AccelStepper(MOTORINTERFACETYPE, this->ports.step, this->ports.dir);
-      this->stepper.setMaxSpeed(MAXSPEED);
-      
-      this->step_speed    = step_speed;
-      this->step_count    = step_count;
-      this->step2deg      = (float) max_deg / step_count;
-      this->max_deg       = max_deg;
-      this->offset        = 0;
+    this->stepper =
+        AccelStepper(MOTORINTERFACETYPE, this->ports.step, this->ports.dir);
+    this->stepper.setMaxSpeed(MAXSPEED);
 
-      this->restart_deg_count = restart_deg_count;
-      
-      this->home();
-    }
+    this->step_speed = step_speed;
+    this->step_count = step_count;
+    this->step2deg = (float)max_deg / step_count;
+    this->max_deg = max_deg;
+    this->offset = 0;
 
-    void set_offset(int offset);
-    int get_deg();
-    void set_target(int deg);
-    bool step();
-    void motor_down(float steps);
-    void motor_up(float steps);
-    void home();
+    this->restart_deg_count = restart_deg_count;
 
-  
+    this->home();
+  }
+
+  void set_offset(int offset);
+  int get_deg();
+  void set_target(int deg);
+  bool step();
+  void motor_down(float steps);
+  void motor_up(float steps);
+  void home();
 };
